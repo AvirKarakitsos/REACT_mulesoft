@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+:root{
+    --color-black: #242424;
+    --color-grey: #6B6B6B;
+}

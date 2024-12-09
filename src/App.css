@@ -1,0 +1,41 @@
+.main-container {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 20px;
+  border: 1px solid red;
+}
+
+.title {
+  margin: 50px 0 32px 0;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.subtitle {
+  margin-top: 48px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.first-content {
+  margin-top: 19px;
+  line-height: 32px;
+}
+
+.content {
+  margin-top: 42px;
+  line-height: 32px;
+}
+
+.image-content {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.title-image {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--color-grey);
+}
