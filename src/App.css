@@ -1,8 +1,8 @@
 .main-container {
   max-width: 720px;
+  width: 100%;
   margin: 0 auto;
   font-size: 20px;
-  border: 1px solid red;
 }
 
 .title {
@@ -34,8 +34,37 @@
   align-items: center; 
 }
 
-.title-image {
+.image {
+  width: 720px;
+  object-fit: cover;
+}
+
+.image-title {
   margin-top: 10px;
   font-size: 14px;
   color: var(--color-grey);
+}
+
+@media screen and (max-width: 1080px) {
+  .main-container {
+    max-width: 500px;
+  }
+
+  .image {
+    width: 500px;
+    object-fit: cover;
+  }
+  
+}
+
+@media screen and (max-width: 425px) {
+  .main-container {
+    max-width: 400px;
+  }
+
+  .image {
+    width: 400px;
+    object-fit: cover;
+  }
+  
 }

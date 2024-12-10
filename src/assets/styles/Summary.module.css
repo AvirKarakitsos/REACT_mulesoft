@@ -1,5 +1,4 @@
 .container {
-    width: 250px;
     position: fixed;
     top: 100px;
     right: 100px;
@@ -25,4 +24,10 @@
 .link {
     text-decoration: none;
     color: var(--color-black);
+}
+
+@media screen and (max-width: 1400px) {
+    .container {
+        right: 25px;
+    }
 }
