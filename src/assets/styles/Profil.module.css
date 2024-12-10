@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    column-gap: 15px;
+}
+
+.profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.style1 {
+    color: var(--color-black);
+    font-size: 16px;
+}
+
+.style2 {
+    color: var(--color-grey);
+    font-size: 14px;
+}
