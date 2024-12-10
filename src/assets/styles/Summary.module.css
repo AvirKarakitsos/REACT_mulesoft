@@ -1,0 +1,28 @@
+.container {
+    width: 250px;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+}
+
+.title {
+    margin-bottom: 16px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.list {
+    font-size: 14px;
+    list-style-type: none;
+    border-left: 2px solid var(--color-grey);
+    cursor: pointer;
+}
+
+.item {
+    padding: 8px 16px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--color-black);
+}

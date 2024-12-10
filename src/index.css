@@ -8,4 +8,5 @@
 :root{
     --color-black: #242424;
     --color-grey: #6B6B6B;
+    scroll-behavior: smooth;
 }
