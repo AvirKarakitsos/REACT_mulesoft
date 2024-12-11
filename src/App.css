@@ -27,6 +27,16 @@
   line-height: 32px;
 }
 
+.first-item {
+  margin: 42px 0 0 30px;
+  line-height: 32px;
+}
+
+.item {
+  margin: 23px 0 0 30px;
+  line-height: 32px;
+}
+
 .image-content {
   margin-top: 56px;
   display: flex;
