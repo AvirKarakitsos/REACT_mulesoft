@@ -1,5 +1,7 @@
 import './App.css'
-import cycle from './assets/images/schema_11.png'
+import image_11 from './assets/images/schema_11.png'
+import image_21 from './assets/images/schema_21.png'
+import image_22 from './assets/images/schema_22.png'
 import Profil from './components/Profil'
 import Summary from './components/Summary'
 import { useEffect, useState } from "react"
@@ -35,7 +37,7 @@ function App() {
       <p className='content'>La plateforme Mulesoft se nomme Anypoint Platform. Elle permet de concevoir une API dans sa globalité : de son design à sa mise en ligne et à sa gestion. Sur la figure 1.1 est indiquée les différentes étapes de la construction d’une API. Chaque cycle est composé de plusieurs phases :</p>
       <figure className='image-content'>
         <picture>
-          <img className='image' src={cycle} alt="cycle de vie d'une API"/>
+          <img className='image' src={image_11} alt="cycle de vie d'une API"/>
         </picture>
         <figcaption className='image-title'>1.1 - Cycle de vie d'une API</figcaption>
       </figure>
@@ -47,7 +49,21 @@ function App() {
       <p className='content'>Nous commencerons donc l’étude par la première étape, les spécifications.</p>
 
       <h2 className='subtitle' id='spec'>Les Spécifications</h2>
-      <p className='first-content'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic debitis sunt amet doloremque nihil repudiandae quis perspiciatis, dolorum quae soluta vel officiis cupiditate eos pariatur tenetur repellendus possimus repellat similique?</p>
+      <p className='first-content'>C’est dans la partie Design Center de la plateforme d’Anypoint qu’on pourra écrire nos spécifications. Nous allons détailler l’architecture de notre API dans un fichier raml. Nous pouvons coder à la main ou utiliser l’aide fournie qui remplie le fichier à mesure qu’on sélectionne les différentes options (figure 2-1).</p>
+      <figure className='image-content'>
+        <picture>
+          <img className='image' src={image_21} alt="Deux options pour créer notre fichier raml"/>
+        </picture>
+        <figcaption className='image-title'>2.1 - Deux options pour créer notre fichier raml</figcaption>
+      </figure>
+      <p className='content'>Dans ce fichier on écrit les différentes routes, on peut utiliser des types, fournir des exemples… Une fois le fichier complété, on peut le tester grâce à l’API console. L’option Mocking Service nous délivre une url afin de le tester sur des REST Client comme Postman.</p>
+      <p className='content'>Une fois les tests passés avec succès, on peut publier notre fichier. On le retrouve dans la partie Exchange d’Anypoint. Dans cet onglet Exchange, on peut éditer la documentation de notre API afin d'écrire une description (figure 2-2).</p>
+      <figure className='image-content'>
+        <picture>
+          <img className='image' src={image_22} alt="Onglet Exchange d'Anypoint"/>
+        </picture>
+        <figcaption className='image-title'>2.2 - Onglet Exchange d'Anypoint</figcaption>
+      </figure>
     </div>
   )
 }
