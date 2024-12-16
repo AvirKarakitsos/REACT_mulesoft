@@ -68,20 +68,25 @@ function App() {
       </figure>
 
       <h2 className='subtitle' id='imp'>L'implémentation</h2>
-      <p className='first-content'>Pour coder l’API on se retrouve sur l’IDE Anypoint Studio. Sur la figure 3.1 est indiquée les différentes parties du projet. On sélectionne un item dans la palette (par exemple l’élément Listener) et on le fait glisser dans le canvas. Un double clique sur l’élément nous montre les configurations à effectuer.</p>
+      <p className='first-content'>Nous allons simplement construire l’API qui renvoie le message « Hello Mule » à une requête Get à l’adresse http::/localhost :8081/hellomule. Pour cela nous créons notre application Mule grâce à l’IDE Anypoint Studio, basé sur langage Java et le framework Eclipse. Sur la figure 3.1 est indiquée les différentes parties du projet.</p>
       <figure className='image-content'>
         <picture>
           <img className='image' src={image_31} alt="Projet Mule"/>
         </picture>
         <figcaption className='image-title'>3.1 - Projet Mule</figcaption>
       </figure>
-      <p className='content'>Listener est notre événement source. On le lie à des événements processus (Payload, Logger) afin de constituer notre Flow (figure 3.2).</p>
+      <p className='content'>On sélectionne un item dans la palette (par exemple l’élément Listener) et on le fait glisser dans le canvas. Un double clique sur l’élément nous montre les configurations à effectuer (indication du port, de la route). On construit par cette procédure de drag-and-drop un flux (Flow), c’est-à-dire un ensemble de composants Mule dans lequel une requête, un évènement est reçu et traité, voir figure 3.2.</p>
       <figure className='image-content'>
         <picture>
           <img className='image' src={image_32} alt="Flow"/>
         </picture>
-        <figcaption className='image-title'>3.2 - Flow</figcaption>
+        <figcaption className='image-title'>3.2 - Simple flux</figcaption>
       </figure>
+      <p className='content'>Il existe deux sortes de composants Mule. Dans notre exemple :</p>
+      <ul>
+        <li className='first-item'>Listener est appelé composant source, c’est le premier évènement du flux. Il reçoit un événement déclencheur, crée un événement Mule correspondant, et transmet cet événement qui sera traiter par le composant suivant du flux.</li>
+        <li className='item'>Payload et Logger sont appelés composants processeurs, ils traitent l’évènement Mule.</li>
+      </ul>
     </div>
   )
 }
