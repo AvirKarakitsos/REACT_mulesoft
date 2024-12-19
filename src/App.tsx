@@ -4,6 +4,9 @@ import image_21 from './assets/images/schema_21.png'
 import image_22 from './assets/images/schema_22.png'
 import image_31 from './assets/images/schema_31.png'
 import image_32 from './assets/images/schema_32.png'
+import image_33 from './assets/images/schema_33.png'
+import image_34 from './assets/images/schema_34.png'
+import image_35 from './assets/images/schema_35.png'
 import Profil from './components/Profil'
 import Summary from './components/Summary'
 import { useEffect, useState } from "react"
@@ -81,7 +84,7 @@ function App() {
       <p className='content'>On sélectionne un item dans la palette (par exemple l’élément Listener) et on le fait glisser dans le canvas. Un double clique sur l’élément nous montre les configurations à effectuer (indication du port, de la route). On construit par cette procédure de drag-and-drop un flux (Flow), c’est-à-dire un ensemble de composants Mule dans lequel une requête, un évènement est reçu et traité, voir figure 3.2.</p>
       <figure className='image-content'>
         <picture>
-          <img className='image image-config' src={image_32} alt="Flow"/>
+          <img className='image image-config' src={image_32} alt="Simple flux"/>
         </picture>
         <figcaption className='image-title'>3.2 - Simple flux</figcaption>
       </figure>
@@ -90,10 +93,30 @@ function App() {
         <li className='first-item'>Listener est appelé composant source, c’est le premier évènement du flux. Il reçoit un événement déclencheur, crée un événement Mule correspondant, et transmet cet événement qui sera traiter par le composant suivant du flux.</li>
         <li className='item'>Payload et Logger sont appelés composants processeurs, ils traitent l’évènement Mule.</li>
       </ul>
+      <p className='content'>L'application Mule traduit notre flux en langage xml</p>
+      <figure className='image-content'>
+        <picture>
+          <img className='image' src={image_33} alt="Le rendu xml"/>
+        </picture>
+        <figcaption className='image-title'>3.3 - Le rendu xml</figcaption>
+      </figure>
 
       <p className='content'><span className='weight'>Exemple 2.</span> On souhaite construire un endpoint « /flights » où sera disponible les vols fournit par une base de donnée mySQL. On souhaite également modifier en sortie la structure des données.</p>
       <p className='content'>Le composant Select disponible dans Database permet de se connecter à une base donnée. On configure le composant afin d’utiliser mySQL (host, port, user, mot de passe). C’est dans la case request SQL qu’on peut écrire notre requête SQL afin de sélectionner tous les vols dans notre base de données.</p>
-      <p className='content'>La deuxième étape est d’utiliser le composant Transform Message. On va pouvoir transformer la structure des données grâce à <span className='weight'>DataWeave</span>, qui un langage de programmation propre à Mulesoft. Ici on ne va pas coder à proprement parler avec DataWeave, mais on va utiliser son interface. Sur la figure3.5, on a pu transformer un objet Mule en un objet JSON en le précisant en sortie. Puis lorsqu’on définit une nouvelle structure de l’objet, on peut faire correspondre les différents champs. On obtient le résultat figure 3.7.</p>
+      <p className='content'>La deuxième étape est d’utiliser le composant Transform Message. On va pouvoir transformer la structure des données grâce à <span className='weight'>DataWeave</span>, qui un langage de programmation propre à Mulesoft. Ici on ne va pas coder à proprement parler avec DataWeave, mais on va utiliser son interface. Sur la figure3.4, on a pu transformer un objet Mule en un objet JSON en le précisant en sortie. </p>
+      <figure className='image-content'>
+        <picture>
+          <img className='image' src={image_34} alt="Interface de DataWeave"/>
+        </picture>
+        <figcaption className='image-title'>3.4 - Interface de DataWeave</figcaption>
+      </figure>
+      <p className='content'>Puis lorsqu’on définit une nouvelle structure de l’objet, on peut faire correspondre les différents champs. On obtient le résultat figure 3.5.</p>
+      <figure className='image-content'>
+        <picture>
+          <img className='image' src={image_35} alt="Résultat final"/>
+        </picture>
+        <figcaption className='image-title'>3.5 - Résultat final</figcaption>
+      </figure>
     </div>
   )
 }
