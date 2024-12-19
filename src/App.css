@@ -37,6 +37,10 @@
   line-height: 32px;
 }
 
+.weight {
+  font-weight: 600;
+}
+
 .image-content {
   margin-top: 56px;
   display: flex;
@@ -46,7 +50,12 @@
 
 .image {
   width: 720px;
+  height: 420px;
   object-fit: cover;
+}
+
+.image-config {
+  object-fit: none;
 }
 
 .image-title {

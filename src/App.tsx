@@ -35,6 +35,7 @@ function App() {
       <p className='content'>Mulesoft est une plateforme d’intégration qui permet de connecter des applications, des services grâce à l’utilisation d’API. Le but est de permettre à une entreprise d’améliorer la connexion de ses systèmes afin de gagner en rapidité, en productivité… A noter qu’en 2018, Mulesoft s’est fait racheté par le CRM Salesforce pour 6.5 milliards de dollars. Cela a permit à Salesforce de faciliter la connexion de son écosystème aux autres systèmes des entreprises (ERP, base de données…) et à Mulesoft d’élargir l’interconnexion entre différents services.</p>
       
       <h2 className='subtitle' id='intro'>Introduction</h2>
+
       <p className='first-content'>Pour améliorer cette connexion entre différents services, l’idée est de créer un ensemble de composants (d’API), appelé réseau d’applications, dont le but est de rendre ces composants réutilisables afin que le réseau d’applications soit le plus flexible possible. Ce dernier va être construit selon une architecture, appelée API-led connectivity, composée de trois couches d’API, où chacune d’elle va être modulable de telle sorte à rendre l’ensemble adaptable. Nous nous limiterons par la suite à la construction d’une API. </p>
       <p className='content'>La plateforme Mulesoft se nomme Anypoint Platform. Elle permet de concevoir une API dans sa globalité : de son design à sa mise en ligne et à sa gestion. Sur la figure 1.1 est indiquée les différentes étapes de la construction d’une API. Chaque cycle est composé de plusieurs phases :</p>
       <figure className='image-content'>
@@ -51,6 +52,7 @@ function App() {
       <p className='content'>Nous commencerons donc l’étude par la première étape, les spécifications.</p>
 
       <h2 className='subtitle' id='spec'>Les Spécifications</h2>
+
       <p className='first-content'>C’est dans la partie Design Center de la plateforme d’Anypoint qu’on pourra écrire nos spécifications. Nous allons détailler l’architecture de notre API dans un fichier raml. Nous pouvons coder à la main ou utiliser l’aide fournie qui remplie le fichier à mesure qu’on sélectionne les différentes options (figure 2.1).</p>
       <figure className='image-content'>
         <picture>
@@ -68,7 +70,8 @@ function App() {
       </figure>
 
       <h2 className='subtitle' id='imp'>L'implémentation</h2>
-      <p className='first-content'>Nous allons simplement construire l’API qui renvoie le message « Hello Mule » à une requête Get à l’adresse http::/localhost :8081/hellomule. Pour cela nous créons notre application Mule grâce à l’IDE Anypoint Studio, basé sur langage Java et le framework Eclipse. Sur la figure 3.1 est indiquée les différentes parties du projet.</p>
+
+      <p className='first-content'><span className='weight'>Exemple 1.</span> Nous allons simplement construire l’API qui renvoie le message « Hello Mule » à une requête Get à l’adresse http::/localhost :8081/hellomule. Pour cela nous créons notre application Mule grâce à l’IDE Anypoint Studio, basé sur langage Java et le framework Eclipse. Sur la figure 3.1 est indiquée les différentes parties du projet.</p>
       <figure className='image-content'>
         <picture>
           <img className='image' src={image_31} alt="Projet Mule"/>
@@ -78,7 +81,7 @@ function App() {
       <p className='content'>On sélectionne un item dans la palette (par exemple l’élément Listener) et on le fait glisser dans le canvas. Un double clique sur l’élément nous montre les configurations à effectuer (indication du port, de la route). On construit par cette procédure de drag-and-drop un flux (Flow), c’est-à-dire un ensemble de composants Mule dans lequel une requête, un évènement est reçu et traité, voir figure 3.2.</p>
       <figure className='image-content'>
         <picture>
-          <img className='image' src={image_32} alt="Flow"/>
+          <img className='image image-config' src={image_32} alt="Flow"/>
         </picture>
         <figcaption className='image-title'>3.2 - Simple flux</figcaption>
       </figure>
@@ -87,6 +90,10 @@ function App() {
         <li className='first-item'>Listener est appelé composant source, c’est le premier évènement du flux. Il reçoit un événement déclencheur, crée un événement Mule correspondant, et transmet cet événement qui sera traiter par le composant suivant du flux.</li>
         <li className='item'>Payload et Logger sont appelés composants processeurs, ils traitent l’évènement Mule.</li>
       </ul>
+
+      <p className='content'><span className='weight'>Exemple 2.</span> On souhaite construire un endpoint « /flights » où sera disponible les vols fournit par une base de donnée mySQL. On souhaite également modifier en sortie la structure des données.</p>
+      <p className='content'>Le composant Select disponible dans Database permet de se connecter à une base donnée. On configure le composant afin d’utiliser mySQL (host, port, user, mot de passe). C’est dans la case request SQL qu’on peut écrire notre requête SQL afin de sélectionner tous les vols dans notre base de données.</p>
+      <p className='content'>La deuxième étape est d’utiliser le composant Transform Message. On va pouvoir transformer la structure des données grâce à <span className='weight'>DataWeave</span>, qui un langage de programmation propre à Mulesoft. Ici on ne va pas coder à proprement parler avec DataWeave, mais on va utiliser son interface. Sur la figure3.5, on a pu transformer un objet Mule en un objet JSON en le précisant en sortie. Puis lorsqu’on définit une nouvelle structure de l’objet, on peut faire correspondre les différents champs. On obtient le résultat figure 3.7.</p>
     </div>
   )
 }
