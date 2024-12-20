@@ -7,6 +7,8 @@ import image_32 from './assets/images/schema_32.png'
 import image_33 from './assets/images/schema_33.png'
 import image_34 from './assets/images/schema_34.png'
 import image_35 from './assets/images/schema_35.png'
+import image_36 from './assets/images/schema_36.png'
+import image_37 from './assets/images/schema_37.png'
 import Profil from './components/Profil'
 import Summary from './components/Summary'
 import { useEffect, useState } from "react"
@@ -102,7 +104,7 @@ function App() {
       </figure>
 
       <p className='content'><span className='weight'>Exemple 2.</span> On souhaite construire un endpoint « /flights » où sera disponible les vols fournit par une base de donnée mySQL. On souhaite également modifier en sortie la structure des données.</p>
-      <p className='content'>Le composant Select disponible dans Database permet de se connecter à une base donnée. On configure le composant afin d’utiliser mySQL (host, port, user, mot de passe). C’est dans la case request SQL qu’on peut écrire notre requête SQL afin de sélectionner tous les vols dans notre base de données.</p>
+      <p className='content'>Le composant Select disponible dans Database permet de se connecter à une base donnée. On configure le composant afin d’utiliser mySQL (host, port, user, mot de passe). C’est dans la partie "query" qu’on peut écrire notre requête SQL afin de sélectionner tous les vols dans notre base de données.</p>
       <p className='content'>La deuxième étape est d’utiliser le composant Transform Message. On va pouvoir transformer la structure des données grâce à <span className='weight'>DataWeave</span>, qui un langage de programmation propre à Mulesoft. Ici on ne va pas coder à proprement parler avec DataWeave, mais on va utiliser son interface. Sur la figure3.4, on a pu transformer un objet Mule en un objet JSON en le précisant en sortie. </p>
       <figure className='image-content'>
         <picture>
@@ -116,6 +118,20 @@ function App() {
           <img className='image' src={image_35} alt="Résultat final"/>
         </picture>
         <figcaption className='image-title'>3.5 - Résultat final</figcaption>
+      </figure>
+
+      <p className='content'>On peut renommer notre flux getFlights. Désormais pour ajouter une nouvelle ressource, il suffit de construire un nouveau flux. Par exemple pour obtenir un vol selon son identifiant, on copie colle notre premier flux getFlights (figure 3.6) puis il suffit d’ajuster les configurations des composants Listener (endpoint) et Select (requête et paramètre dans l’uri), voir figure 3.7 pour obtenir le résultat souhaité, qu’on nommera getFlightsById</p>
+      <figure className='image-content'>
+        <picture>
+          <img className='image' src={image_36} alt="Les Deux flux getFlights et getFlightsById"/>
+        </picture>
+        <figcaption className='image-title'>3.6 - Les deux flux getFlights et getFlightsById</figcaption>
+      </figure>
+      <figure className='image-content'>
+        <picture>
+          <img className='image' src={image_37} alt="Paramètre pour le composant Select de getFlightsById"/>
+        </picture>
+        <figcaption className='image-title'>3.7 - Paramètre pour le composant Select de getFlightsById</figcaption>
       </figure>
     </div>
   )
