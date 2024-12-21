@@ -133,6 +133,11 @@ function App() {
         </picture>
         <figcaption className='image-title'>3.7 - Paramètre pour le composant Select de getFlightsById</figcaption>
       </figure>
+
+      <h2 className='subtitle' id='intro'>Gestion de l'API</h2>
+
+      <p className='first-content'>Avant toute chose, il faut connecter son compte Anypoint Platform via Anypoint Studio. Le déploiement de l’API se fait en quelques cliques dans l’IDE.</p>
+
     </div>
   )
 }
