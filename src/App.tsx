@@ -136,8 +136,8 @@ function App() {
 
       <h2 className='subtitle' id='intro'>Gestion de l'API</h2>
 
-      <p className='first-content'>Avant toute chose, il faut connecter son compte Anypoint Platform via Anypoint Studio. Le déploiement de l’API se fait en quelques cliques dans l’IDE.</p>
-
+      <p className='first-content'>Avant toute chose, il faut connecter son compte Anypoint Platform via Anypoint Studio. Le déploiement de l’API se fait en quelques cliques dans l’IDE. Notre API sera en ligne grâce au service cloud Cloudhub.</p>
+      <p className='content'>Ensuite, grâce à l'API Manager, vous pouvez configurer des politiques de sécurité, comme le contrôle d'accès et surveiller les performances en temps réel via des tableaux de bord détaillés. Cela permet de garantir la disponibilité, la sécurité et l'optimisation continue de l'API.</p>
     </div>
   )
 }
